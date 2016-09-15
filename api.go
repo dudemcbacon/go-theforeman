@@ -26,8 +26,6 @@ type Client struct {
 // NewClient returns a new Client
 func NewClient(conf *Config, httpClient *http.Client) *Client {
 	s := sling.New().Client(conf.HttpClient).Base(conf.BaseURL).SetBasicAuth(conf.Username, conf.Password)
-	fmt.Println(conf.Username)
-	fmt.Println(conf.Password)
 	return &Client{
 		EnvironmentsService: NewEnvironmentsService(s),
 		HostsService:        NewHostsService(s),
