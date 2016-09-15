@@ -13,16 +13,17 @@ import (
 )
 
 func main() {
-	config := &theforeman.Config{
-		BaseURL:  "http://foreman.mgmt.nweacolo.pvt/api/",
-		Username: "api-user",
-		Password: "snip",
-	}
-	foreman := theforeman.NewClient(config, nil)
-	names, _, _ := foreman.EnvironmentsService.ListEnvironmentNames(nil)
+  config := &theforeman.Config{
+    BaseURL:  "http://foreman.mgmt.nweacolo.pvt/api/",
+    Username: "api-user",
+    Password: "snip",
+  }
+
+  foreman := theforeman.NewClient(config, nil)
+
+  names, _, _ := foreman.EnvironmentsService.ListEnvironmentNames(nil)
   for _, name := range names {
     fmt.Println(name)
   }
-
 }
 ```
