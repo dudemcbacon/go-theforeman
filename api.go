@@ -1,7 +1,6 @@
 package theforeman
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/dghubble/sling"
